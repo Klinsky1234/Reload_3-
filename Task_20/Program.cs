@@ -11,8 +11,27 @@ int.TryParse(Console.ReadLine()!, out Ay);
 Console.WriteLine($"Введите коордлинате y токи B: ");
 int.TryParse(Console.ReadLine()!, out By);
 
-int x = (Bx - Ax) * (Bx - Ax);// мы находим квадрат 
-int y = (By - Ay) * (By - Ay);
-int xy = x + y;
+/*  double x = (Bx - Ax) * (Bx - Ax);// мы находим квадрат 
+double y = (By - Ay) * (By - Ay);
+double xy = x + y;
 double ans = Math.Round(Math.Sqrt(xy), 2); // находим корень и  мафроунд округляет до 2 
+Console.WriteLine($"Расстояние: {ans}"); - это одно решение */
+
+/* можно решить слудующим способом
+double x = PointSqr(Bx,Ax); - PointSqr такое название взяли, типа возведение какой-то точки в квадрат 
+double y = PointSqr(By,Ay);
+double xy = x + y;
+double ans = Math.Round(Math.Sqrt(xy), 2);
+double PointSqr(double x, double y)
+{
+    return (x - y) * (x - y);
+}  - это первый шаг 
+потом вместо х подставляем PointSqr(Bx - Ax), а вместо y -> PointSqr(By - Ay)
+*/
+
+double ans = Math.Round(Math.Sqrt(PointSqr(Bx, Ax) + PointSqr(By, Ay)), 2); // xy = x + y, поэтому вместо xy мы подставляем эту хуиту
 Console.WriteLine($"Расстояние: {ans}");
+double PointSqr(double x, double y)
+{
+    return (x - y) * (x - y);
+}
