@@ -7,10 +7,12 @@ Console.WriteLine($"Enter Y: ");
 int.TryParse(Console.ReadLine()!, out y);
 
 if (x > 0 && y > 0)
-    Console.WriteLine($"1");
-else if (x < 0 && y > 0)
-    Console.WriteLine($"2");
+    Console.WriteLine($"Плоскость: 1");
+else if (x < 0 && y > 0)// 
+    Console.WriteLine($"Плоскость: 2");
 else if (x < 0 && y < 0)
-    Console.WriteLine($"3");
+    Console.WriteLine($"Плоскость: 3");
 else if (x > 0 && y < 0)
-    Console.WriteLine($"2");
+    Console.WriteLine($"Плоскость: 2");
+else
+    Console.WriteLine($"Неверный ввод");
